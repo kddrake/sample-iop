@@ -9,11 +9,12 @@ header {
   background-color: #dddddd;
 }
 
-nav
+nav {
   a {
     font-family: 'Oswald', sans-serif;
     font-weight: 300;
   }
+
 }
 
 a {
@@ -27,7 +28,7 @@ h1 {
   font-weight: 700;
 }
 
-h2 h3 h4 h5 h6{
+h2, h3, h4, h5, h6 {
   display: block;
 
   font-family: 'Oswald', sans-serif;
@@ -38,7 +39,7 @@ h2 h3 h4 h5 h6{
   display: inline-block;
 
   margin-top: 5px;
-  margin-bottom;
+  margin-bottom: 5px;
   box-shadow: 0px 1px 1px #222222;
   border: none;
   padding: 25px;
@@ -52,7 +53,7 @@ form {
   display: inline-block;
 
   margin-top: 5px;
-  margin-bottom;
+  margin-bottom: 5px;
   box-shadow: 0px 1px 1px #222222;
   border: none;
   padding: 25px;
