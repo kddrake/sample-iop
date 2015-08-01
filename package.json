@@ -1,0 +1,17 @@
+{
+  "name": "sample-iop",
+  "version": "0.1.0",
+  "description": "Sample project application to test the new instructions for UX's Intern Onboarding Program",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kddrake/sample-iop.git"
+  },
+  "author": "Kean Drake",
+  "bugs": {
+    "url": "https://github.com/kddrake/sample-iop/issues"
+  },
+  "homepage": "https://github.com/kddrake/sample-iop#readme",
+  "devDependencies": {
+    "angular": "^1.4.3"
+  }
+}
