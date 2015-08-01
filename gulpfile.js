@@ -13,3 +13,9 @@ gulp.task('reload:src', function(){
   gulp.src('./src')
   .pipe(connect.reload());
 });
+
+gulp.task('watch', function(){
+  gulp.watch(['src/*'], ['reload:src']);
+});
+
+gulp.task('default', ['connect', 'watch']);
