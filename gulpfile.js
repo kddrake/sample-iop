@@ -6,7 +6,7 @@ var Server = require('karma').Server;
 var connect = require('gulp-connect');
 
 gulp.task('sass', 'Compiles preprocessed SASS files to a CSS file', function() {
-  gulp.src('src/sass/*.scss')
+  gulp.src(['src/sass/*.scss', 'src/sass/*.sass'])
   .pipe(sass().on('error', sass.logError))
   .pipe(gulp.dest('src'))
 });
@@ -19,7 +19,9 @@ gulp.task('jshint', 'Detects errors and potential problems in JavaScript', funct
 
 gulp.task('unit-test', 'Runs Karma unit tests', function(done){
   new Server({
-    configFile: './test/unit/karma.conf.js'
+    //__dirname is a global nodeJS var that points to
+    //the directory containing the gulpfile
+    configFile: __dirname + '/test/unit/karma.conf.js'
   }, done).start();
 });
 
