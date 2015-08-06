@@ -39,9 +39,9 @@ gulp.task('reload:src', false, function(){
 });
 
 gulp.task('watch', 'Watches files and runs corresponding gulp tasks', function(){
-  gulp.watch(['src/*.html', 'src/*.css'], ['reload:src']);
-  gulp.watch(['src/*.scss'], ['sass']);
-  gulp.watch(['src/*.js'], ['jshint']);
+  gulp.watch(['src/partials/*.html', 'src/*.css'], ['reload:src']);
+  gulp.watch(['src/sass/*.scss', 'src/sass/*.sass'], ['sass']);
+  gulp.watch(['src/js/*.js'], ['jshint']);
 });
 
 gulp.task('default', false, ['sass', 'jshint', 'unit-test', 'connect', 'watch']);
