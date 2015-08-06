@@ -41,7 +41,7 @@ gulp.task('reload:src', false, function(){
 gulp.task('watch', 'Watches files and runs corresponding gulp tasks', function(){
   gulp.watch(['src/partials/*.html', 'src/*.css'], ['reload:src']);
   gulp.watch(['src/sass/*.scss', 'src/sass/*.sass'], ['sass']);
-  gulp.watch(['src/js/*.js'], ['jshint']);
+  gulp.watch(['src/js/*.js'], ['jshint', 'reload:src']);
 });
 
 gulp.task('default', false, ['sass', 'jshint', 'unit-test', 'connect', 'watch']);
