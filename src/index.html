@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang='en' ng-app="sampleIOP">
   <head>
     <meta charset="utf-8"/>
     <title>Sample iOP</title>
@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css" />
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
     <script src="js/script.js"></script>
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="js/module.js"></script>
+
+    <script src="../node_modules/angular-ui-router/build/angular-ui-router.js"></script>
+    <script src="js/routes.js"></script>
+
+    <script src="../node_modules/angular-resource/angular-resource.js"></script>
+    <script src="js/services/userService.js"></script>
+
   </head>
   <body>
     <header>
@@ -15,18 +25,13 @@
         <h2>Created by following the <a href="https://github.com/Banno/wiki/tree/ux-intern-onboarding/ux/intern-onboarding-project">Intern Onboarding Project Docs</a></h2>
       </hgroup>
       <nav>
-        <a href="http://localhost:1820">Home</a>
-        <a href="http://localhost:1820/partials/usersList.html">Users List</a>
-        <a href="http://localhost:1820/partials/userProfile.html">User Profile</a>
-        <a href="http://localhost:1820/partials/newUser.html">New User</a>
-        <a href="http://localhost:1820/partials/editUser.html">Edit User</a>
+        <a href="http://localhost:1820">Root</a>
+        <a ui-sref="users">Users List</a>
+        <a ui-sref="profile({id: 01})">User Profile</a>
+        <a ui-sref="new">New User</a>
+        <a ui-sref="edit({id: 01})">Edit User</a>
       </nav>
     </header>
-    <h1>Sample iOP Home Page</h1>
-    <p>
-      This sample project is created to test out the new instructions for the UX Intern Onboarding Project.
-
-      The project now utilizes gulp!
-    </p>
+    <div ui-view></div>
   </body>
 </html>

@@ -24,6 +24,8 @@
 	"globals"				: {
 		"angular"			: false,
 		"document"		: false,
+		"app"					: false,
+		"$state"			: false,
 
 		// Angular mocks
 		"module"			: false,
