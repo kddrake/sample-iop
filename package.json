@@ -12,7 +12,9 @@
   },
   "homepage": "https://github.com/kddrake/sample-iop#readme",
   "dependencies": {
-    "angular": "^1.4.3"
+    "angular": "^1.4.3",
+    "angular-resource": "^1.4.3",
+    "angular-ui-router": "^0.2.15"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
