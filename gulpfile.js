@@ -12,7 +12,7 @@ gulp.task('sass', 'Compiles preprocessed SASS files to a CSS file', function() {
 });
 
 gulp.task('jshint', 'Detects errors and potential problems in JavaScript', function() {
-  return gulp.src('src/js/*.js')
+  return gulp.src(['src/js/*.js', 'src/js/**/*.js'])
   .pipe(jshint())
   .pipe(jshint.reporter('jshint-stylish'));
 });
@@ -27,7 +27,7 @@ gulp.task('unit-test', 'Runs Karma unit tests', function(done){
 
 gulp.task('connect', 'Webserver with LiveReload at localhost:1820 serving up \'src/\'', function(){
   connect.server({
-    root: 'src',
+    root: __dirname,
     port: 1820,
     livereload: true
   });
@@ -39,9 +39,9 @@ gulp.task('reload:src', false, function(){
 });
 
 gulp.task('watch', 'Watches files and runs corresponding gulp tasks', function(){
-  gulp.watch(['src/partials/*.html', 'src/*.css'], ['reload:src']);
+  gulp.watch(['src/index.html', 'src/partials/*.html', 'src/*.css'], ['reload:src']);
   gulp.watch(['src/sass/*.scss', 'src/sass/*.sass'], ['sass']);
-  gulp.watch(['src/js/*.js'], ['jshint', 'reload:src']);
+  gulp.watch(['src/js/*.js', 'src/js/**/*.js'], ['jshint', 'reload:src']);
 });
 
-gulp.task('default', false, ['sass', 'jshint', 'unit-test', 'connect', 'watch']);
+gulp.task('default', false, ['sass', 'jshint', 'connect', 'watch']);
